@@ -1,0 +1,6 @@
+ps Zaux | grep ssh  
+netstat -Ztulp  | less - security context , ports, 
+ls -Z /var
+
+ls -Z
+ps -Zaux
