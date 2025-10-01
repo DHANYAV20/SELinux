@@ -17,4 +17,18 @@ selinux = 0
 >> setenforce enforcing 
 
 Installing SElinux on ubuntu
+sudo systemctl disable --now apparmor
+sudo apt install policycoreutils selinux-utlls selinux-basics auditd -y
+sudo selinux-activate
+sudo reboot
+
+
+sudo less /var/log/audit/audit.log
+sudo getenforce 
+sudo -i
+cat /var/log/audit/audit.log | audit2allow -m initial > inital.te
+checkmodule -M -m -o initial.mod inital.te
+semodule_package -O initial.pp -m initial.mod
+semodule -i initial.pp
+
 
