@@ -4,3 +4,17 @@ ls -Z /var
 
 ls -Z
 ps -Zaux
+
+selinux = 0
+>> seinfo
+>> getenforce
+>> setenforce enforcing 
+>> reboot
+>>reboot -i 
+>> getenforce
+>> setenforce permissive
+>> getenforce
+>> setenforce enforcing 
+
+Installing SElinux on ubuntu
+
